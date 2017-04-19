@@ -44,7 +44,7 @@ or
 ```
 npm run watch
 ```
-to start webpack in watch mode with BrowserSync.
+to start webpack in watch mode with BrowserSync. Webpack does not support #!/usr/bin/env node and throws an error about '/node_modules/browser-sync/index.js', but everything works fine.
 
 ## Licence
 
