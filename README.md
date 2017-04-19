@@ -15,7 +15,7 @@ npm install
 npm test
 ```
 
-'npm test' run jest located in ./node_modules/.bin
+'npm test' runs jest located in ./node_modules/.bin
 
 ## To bundle assets using webpack run the following
 
