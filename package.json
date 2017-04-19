@@ -4,19 +4,35 @@
   "description": "Loan calculator and sign-up form",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "transpile": "./node_modules/.bin/babel --no-babelrc src/app.jsx --out-file src/app.js --presets=react,es2015,stage-0",
+    "build": "./node_modules/.bin/webpack webpack.config.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rbdevelopment/react-loan-calculator.git"
   },
   "keywords": [
-    "react", "example", "loan", "calculator"
+    "react",
+    "example",
+    "loan",
+    "calculator"
   ],
   "author": "Rafał Bielec",
   "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/rbdevelopment/react-loan-calculator/issues"
   },
-  "homepage": "https://loancalculator-d7bb3.firebaseapp.com"
+  "homepage": "https://loancalculator-d7bb3.firebaseapp.com",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.0.15",
+    "babel-loader": "^6.0.0",
+    "babel-preset-es2015": "^6.0.15",
+    "babel-preset-react": "^6.0.15",
+    "babel-preset-stage-0": "^6.0.15",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "webpack": "^2.4.1"
+  }
 }
