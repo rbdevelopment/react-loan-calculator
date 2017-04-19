@@ -2,12 +2,11 @@
   "name": "react-loan-calculator",
   "version": "1.0.0",
   "description": "Loan calculator and sign-up form",
-  "main": "index.js",
   "scripts": {
     "test": "jest",
     "transpile": "./node_modules/.bin/babel --no-babelrc src/app.jsx --out-file src/app.js --presets=react,es2015,stage-0",
     "build": "./node_modules/.bin/webpack webpack.config.js",
-    "server": "./node_modules/.bin/firebase serve"
+    "start": "./node_modules/.bin/firebase serve"
   },
   "repository": {
     "type": "git",

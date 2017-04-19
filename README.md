@@ -9,10 +9,10 @@ The application is hosted at [https://loancalculator-d7bb3.firebaseapp.com](http
 ```
 npm install
 npm run build
-npm run server
+npm start
 ```
 
-npm run server runs 'firebase serve' to host the application locally.
+'npm start' runs 'firebase serve' to host the application locally.
 
 ## License
 
