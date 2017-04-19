@@ -1,0 +1,22 @@
+{
+  "name": "react-loan-calculator",
+  "version": "1.0.0",
+  "description": "Loan calculator and sign-up form",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rbdevelopment/react-loan-calculator.git"
+  },
+  "keywords": [
+    "react", "example", "loan", "calculator"
+  ],
+  "author": "Rafał Bielec",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/rbdevelopment/react-loan-calculator/issues"
+  },
+  "homepage": "https://loancalculator-d7bb3.firebaseapp.com"
+}
