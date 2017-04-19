@@ -1,11 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-class HelloWorld extends React.Component {
-    render() { return (<p>Hello, world!</p>) }
-}
+import CalcApp from './calc';
 
 ReactDOM.render(
-  <HelloWorld />,
+  <CalcApp />,
   document.getElementById('app')
 );
