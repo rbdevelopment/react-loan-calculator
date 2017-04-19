@@ -39,7 +39,7 @@ npm start
 
 'npm start' runs 'firebase serve' to host the application locally at [http://localhost:5000](http://localhost:5000)
 
-## License
+## Licence
 
 Copyright (c) Rafał Bielec
 
