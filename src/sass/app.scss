@@ -1,4 +1,5 @@
 $white: #FFF4EE;
+$grey: #494949;
 $red: #CF2100;
 body
 {
@@ -20,7 +21,15 @@ body
     width:200px;
     margin-top:2em;
 }
-#app
+#title h2
 {
-    margin-top:2em;
+    margin:0;
+    font-weight: bold;
+    margin-top:50px;
+}
+#title h4
+{
+    margin:0;
+    margin-bottom:1em;
+    color: $grey;
 }

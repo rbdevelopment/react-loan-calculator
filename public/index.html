@@ -52,6 +52,7 @@
 
                 <h4>Technologies used for this project</h4>
                 <ul>
+                    <li><a target='_blank' href='https://firebase.google.com/'>Firebase hosting</a></li>
                     <li><a target='_blank' href='https://getbootstrap.com'>Bootstrap 3</a></li>
                     <li><a target='_blank' href='http://sass-lang.com/'>Sass</a></li>
                     <li><a target='_blank' href='https://facebook.github.io/react'>React</a></li>
@@ -61,12 +62,44 @@
                 </ul>
 
             </div>
-            <div class="col-md-6 col-md-offset-1">
-                <div id="app" />
+            <div class="col-md-5">
+                <section id='title'>
+                    <h2>GET A PERSONAL QUOTE</h2>
+                    <h4>Let's start financing your next big thing</h4>
+                </section>
+
+                <!-- React application renders here -->
+                <div id="app"></div>
+                <script type="text/javascript" src="js/bundle.js"></script>
+                <!-- End of application -->
+
+                <div class="form-group">
+                    <label for="email">What would you like the loan for?</label>
+                    <input type="text" class="form-control" id="purpose">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">How much do you want to borrow?</label>
+                    <input type="text" class="form-control" id="amount">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Over what period?</label>
+                    <input type="text" class="form-control" id="period">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Your monthly installment with us would be</label>
+                    <input type="text" class="form-control" id="installment">
+                </div>
+
+                <div class="form-group">
+                    <br/>
+                    <button class='btn btn-primary'>I'm happy with the offer</button>
+                </div>
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="js/bundle.js"></script>
 </body>
 
 </html>
