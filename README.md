@@ -24,6 +24,13 @@ npm install
 npm run build
 ```
 
+or
+
+```
+npm run prod
+```
+to create the minified bundle.js file for production.
+
 ## To run the project
 
 ```
