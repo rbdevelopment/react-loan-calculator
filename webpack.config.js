@@ -1,3 +1,4 @@
+var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const path = require('path');
 module.exports = {
   entry: ['./src/app.jsx','./src/sass/app.scss'],
@@ -25,5 +26,12 @@ module.exports = {
       }
     ]
   },
-  devtool: 'source-map'
+  devtool: 'source-map',
+  plugins: [
+    new BrowserSyncPlugin({
+      host: 'localhost',
+      port: 5000,
+      server: { baseDir: ['public'] }
+    })
+  ]
 };
