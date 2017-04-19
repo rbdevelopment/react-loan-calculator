@@ -39,13 +39,6 @@ npm start
 
 'npm start' runs 'firebase serve' to host the application locally at [http://localhost:5000](http://localhost:5000)
 
-or
-
-```
-npm run watch
-```
-to start webpack in watch mode with BrowserSync. Webpack does not support #!/usr/bin/env node and throws an error about '/node_modules/browser-sync/index.js', but everything works fine.
-
 ## Licence
 
 Copyright (c) Rafał Bielec

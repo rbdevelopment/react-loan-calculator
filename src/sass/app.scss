@@ -1,4 +1,19 @@
+$bg-color: #F6C47B;
+$white: #FFF4EE;
+$red: #CF2100;
 body
 {
-    background:#fff;
+    background: $bg-color;
+    font-family: 'Muli', sans-serif;
+    font-size: 16px;
+}
+#top
+{
+    background: $red;
+    min-height: 40px;
+    color: $white;
+    font-weight: bold;
+    line-height:2em;
+    text-indent:1em;
+    font-size:1.1em;
 }
