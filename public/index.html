@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Loan calculator and sign-up form in React</title>
+    <title>Loan calculator in React</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
@@ -47,7 +47,7 @@
                 <p>Welcome to an example application in React. I've created a loan calculator with a sign-up form to simulate
                     a lead generation form for a loan provider.
                 </p>
-                <p>You can find the source code at <a target='_blank' href='https://github.com/rbdevelopment/react-loan-calculator'>GitHub</a>.
+                <p>You can find the source code on <a target='_blank' href='https://github.com/rbdevelopment/react-loan-calculator'>GitHub</a>.
                 </p>
 
                 <h4>Technologies used for this project</h4>
@@ -84,7 +84,7 @@
                     <label for="email">How much do you want to borrow?</label>
                     <div class="input-group">
                         <span class="input-group-addon">&pound;</span>
-                        <input type="text" class="form-control" id="amount">
+                        <input type="text" class="form-control" id="amount" autocomplete="off">
                         <span class="input-group-addon">.00</span>
                     </div>
                 </div>
@@ -112,6 +112,9 @@
             </section>
         </div>
     </div>
+    <footer class="text-center m1">
+        Thank you for checking this application
+    </footer>
 </body>
 
 </html>
