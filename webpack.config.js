@@ -1,6 +1,6 @@
 const path = require('path');
 module.exports = {
-  entry: './src/app.jsx',
+  entry: ['./src/app.jsx','./src/sass/app.scss'],
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'public/js')
@@ -21,7 +21,7 @@ module.exports = {
       {
         test: /\.scss$/,
         exclude: /(node_modules|bower_components)/,
-        loaders: ["style", "css", "sass"]
+        loaders: ["style-loader", "css-loader", "sass-loader"]
       }
     ]
   },
