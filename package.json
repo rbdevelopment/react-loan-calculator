@@ -5,7 +5,7 @@
   "scripts": {
     "test": "./node_modules/.bin/jest",
     "transpile": "./node_modules/.bin/babel --no-babelrc src/app.jsx --out-file src/app.js --presets=react,es2015,stage-0",
-    "build": "./node_modules/.bin/webpack webpack.config.js",
+    "build": "./node_modules/.bin/webpack -p webpack.config.js",
     "start": "./node_modules/.bin/firebase serve"
   },
   "repository": {
