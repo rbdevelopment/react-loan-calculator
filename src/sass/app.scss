@@ -1,6 +1,7 @@
 $white: #FFF4EE;
 $grey: #494949;
 $red: #CF2100;
+$dark-red: #931600;
 body
 {
     background: $white;
@@ -13,12 +14,11 @@ body
 }
 .control-validation
 {
-    background: $red;
-    color: $white;
+    color: $dark-red;
     font-weight: bold;
     display: block;
-    width:100%;
     text-indent: 0.3em;
+    font-size:0.9em;
 }
 #top
 {
