@@ -1,8 +1,8 @@
-# Loan calculator and sign-up form
-
 <p align="center">
   <img src="https://rawgit.com/rbdevelopment/react-loan-calculator/master/public/images/logo.svg" alt="Logo" title="" width="250" height="216" />
 </p>
+
+## Loan calculator and sign-up form
 
 Example application in [React](https://facebook.github.io/react)
 
