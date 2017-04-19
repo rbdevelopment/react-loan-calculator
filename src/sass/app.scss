@@ -1,9 +1,8 @@
-$bg-color: #F6C47B;
 $white: #FFF4EE;
 $red: #CF2100;
 body
 {
-    background: $bg-color;
+    background: $white;
     font-family: 'Muli', sans-serif;
     font-size: 16px;
 }
@@ -14,6 +13,14 @@ body
     color: $white;
     font-weight: bold;
     line-height:2em;
-    text-indent:1em;
     font-size:1.1em;
+}
+#logo
+{
+    width:200px;
+    margin-top:2em;
+}
+#app
+{
+    margin-top:2em;
 }
