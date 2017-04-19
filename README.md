@@ -1,5 +1,7 @@
 # Loan calculator and sign-up form
 
+![alt tag](https://raw.githubusercontent.com/rbdevelopment/react-loan-calculator/master/public/images/logo.svg)
+
 Example application in [React](https://facebook.github.io/react)
 
 The application is hosted at [https://loancalculator-d7bb3.firebaseapp.com](https://loancalculator-d7bb3.firebaseapp.com/)
