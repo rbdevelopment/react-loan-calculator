@@ -50,6 +50,9 @@ export default class Calc extends React.Component {
             this.state.purpose &&
             this.state.installment);
     }
+    onSubmit = () => {
+        this.props.onCompletedForm(this.state);
+    }
     render() {
         return (
             <section>
@@ -71,7 +74,7 @@ export default class Calc extends React.Component {
                     amount={this.state.installment} />
                 <ContainerBox>
                     <button disabled={this.isFormIncomplete()}
-                        className='btn btn-success'>
+                        className='btn btn-success' onClick={this.onSubmit}>
                         I'm happy with the offer</button>
                 </ContainerBox>
             </section>
