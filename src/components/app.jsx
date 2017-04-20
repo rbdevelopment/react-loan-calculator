@@ -6,19 +6,25 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      calcData: {}
+      calcData: {},
+      contactData: {}
     };
   }
   onCompletedCalcForm = (data) => {
     this.setState({ calcData: data });
   }
+
+  onCompletedContactForm = (data) => {
+    this.setState({ contactData: data });
+  }
+
   render() {
     let current;
     if (this.state.calcData.installment > 0) {
-      current = <Contact />;
+      current = <Contact onCompletedForm={this.onCompletedCalcForm} />;
     }
     else {
-      current = <Calc onCompletedForm={this.onCompletedCalcForm} />;
+      current = <Calc onCompletedForm={this.onCompletedContactForm} />;
     }
 
     return (
