@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CalcApp from './calc';
+import Calc from './components/calc';
 
 class App extends React.Component {
+  
   render() {
     return (
-      <CalcApp />
+      <Calc />
     )
   }
 }
