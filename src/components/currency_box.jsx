@@ -11,6 +11,7 @@ class CurrencyBox extends React.Component {
             error: ''
         };
         this.minValue = props.minValue || 1000;
+        this.maxValue = props.maxValue || 40000;
     }
     onChange = (e) => {
         let error = '';
@@ -23,6 +24,10 @@ class CurrencyBox extends React.Component {
             if (value < this.minValue) {
                 error = "The loan amount cannot be smaller than \u00A3" + this.minValue;
             }
+            else
+                if (value > this.maxValue) {
+                    error = "The loan amount cannot be greater than \u00A3" + this.maxValue;
+                }
 
         this.setState({ error: error });
         this.props.onAmountChanged(value);
