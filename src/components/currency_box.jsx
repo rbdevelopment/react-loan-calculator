@@ -15,12 +15,13 @@ class CurrencyBox extends React.Component {
     onChange = (e) => {
         let error = '';
         const value = Number.parseInt(e.target.value);
+
         if (isNaN(value)) {
             error = "Please provide a valid amount";
         }
         else
             if (value < this.minValue) {
-                error = "Please provide an amount greater than \u00A3" + this.minValue;
+                error = "The loan amount cannot be smaller than \u00A3" + this.minValue;
             }
 
         this.setState({ error: error });
