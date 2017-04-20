@@ -13,10 +13,8 @@ class CurrencyBox extends React.Component {
         this.minValue = props.minValue || 1000;
         this.maxValue = props.maxValue || 40000;
     }
-    onChange = (e) => {
+    validate(value) {
         let error = '';
-        const value = Number.parseInt(e.target.value);
-
         if (isNaN(value)) {
             error = "Please provide a valid amount";
         }
@@ -28,7 +26,11 @@ class CurrencyBox extends React.Component {
                 if (value > this.maxValue) {
                     error = "The loan amount cannot be greater than \u00A3" + this.maxValue;
                 }
-
+        return error;
+    }
+    onChange = (e) => {
+        const value = Number.parseInt(e.target.value);
+        const error = this.validate(value);
         this.setState({ error: error });
         this.props.onAmountChanged(value);
     }
@@ -37,7 +39,9 @@ class CurrencyBox extends React.Component {
             <ContainerBox>
                 <ControlLabel target={this.props.id} desc={this.props.desc} />
                 <div className="input-group">
-                    <span className="input-group-addon">&pound;</span>
+                    <span className="input-group-addon">
+                        <span className="glyphicon glyphicon-gbp" aria-hidden="true"></span>
+                    </span>
                     <input
                         type="text"
                         className="form-control"
@@ -46,9 +50,7 @@ class CurrencyBox extends React.Component {
                         onChange={this.onChange} />
                     <span className="input-group-addon">.00</span>
                 </div>
-
                 <div className="control-validation">{this.state.error}</div>
-
             </ContainerBox>
         );
     }

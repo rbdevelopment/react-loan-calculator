@@ -20,12 +20,16 @@ export default class App extends React.Component {
 
   render() {
     let current;
-    if (this.state.calcData.installment > 0) {
-      current = <Contact onCompletedForm={this.onCompletedCalcForm} />;
+    if (this.state.contactData.phone) {
+      current = <h3>Thank you! We'll be in touch soon.</h3>
     }
-    else {
-      current = <Calc onCompletedForm={this.onCompletedContactForm} />;
-    }
+    else
+      if (this.state.calcData.installment > 0) {
+        current = <Contact onCompletedForm={this.onCompletedContactForm} />;
+      }
+      else {
+        current = <Calc onCompletedForm={this.onCompletedCalcForm} />;
+      }
 
     return (
       <section>
