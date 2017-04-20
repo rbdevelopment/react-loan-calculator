@@ -2,8 +2,9 @@ import React from 'react';
 import classnames from 'classnames';
 import ControlLabel from './control_label';
 import ContainerBox from './container_box';
+import PropTypes from 'prop-types';
 
-export default class ButtonGroup extends React.Component {
+class ButtonGroup extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -47,3 +48,10 @@ export default class ButtonGroup extends React.Component {
         );
     }
 }
+
+ButtonGroup.propTypes = {
+    desc: PropTypes.string.isRequired,
+    items: PropTypes.array
+};
+
+export default ButtonGroup;

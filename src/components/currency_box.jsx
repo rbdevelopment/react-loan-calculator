@@ -58,7 +58,9 @@ class CurrencyBox extends React.Component {
 
 CurrencyBox.propTypes = {
     desc: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired
+    id: PropTypes.string.isRequired,
+    minValue: PropTypes.number,
+    maxValue: PropTypes.number
 };
 
 export default CurrencyBox;
