@@ -43,7 +43,6 @@ export default class ButtonGroup extends React.Component {
                         </button>;
                     })}
                 </div>
-                <div className="control-validation">please select how many months</div>
             </ContainerBox>
         );
     }

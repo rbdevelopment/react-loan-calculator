@@ -4,9 +4,27 @@ import ControlLabel from './control_label';
 import ContainerBox from './container_box';
 
 class CurrencyBox extends React.Component {
-    onChange = (e) =>
-    {
-        this.props.onAmountChanged(e.target.value);
+    constructor(props) {
+        super(props);
+        this.state = {
+            amount: 0,
+            error: ''
+        };
+        this.minValue = props.minValue || 1000;
+    }
+    onChange = (e) => {
+        let error = '';
+        const value = Number.parseInt(e.target.value);
+        if (isNaN(value)) {
+            error = "Please provide a valid amount";
+        }
+        else
+            if (value < this.minValue) {
+                error = "Please provide an amount greater than \u00A3" + this.minValue;
+            }
+
+        this.setState({ error: error });
+        this.props.onAmountChanged(value);
     }
     render() {
         return (
@@ -19,11 +37,12 @@ class CurrencyBox extends React.Component {
                         className="form-control"
                         id={this.props.id}
                         autoComplete="off"
-                        value={this.props.amount}
                         onChange={this.onChange} />
                     <span className="input-group-addon">.00</span>
                 </div>
-                <div className="control-validation">please provide the amount</div>
+
+                <div className="control-validation">{this.state.error}</div>
+
             </ContainerBox>
         );
     }
