@@ -10,19 +10,10 @@ export default class App extends React.Component {
       contactData: {}
     };
   }
-  onCompletedCalcForm = (data) => {
-    this.setState({ calcData: data });
-  }
-
-  onCompletedContactForm = (data) => {
-    this.setState({ contactData: data });
-  }
-  isCalcDone = () => {
-    return this.state.calcData.installment > 0;
-  }
-  isContactDone = () => {
-    return this.state.contactData.phone;
-  }
+  onCompletedCalcForm = (data) => this.setState({ calcData: data });
+  onCompletedContactForm = (data) => this.setState({ contactData: data });
+  isCalcDone = () => this.state.calcData.installment > 0;
+  isContactDone = () => this.state.contactData.phone;
   render() {
     let current;
     if (this.isContactDone()) {

@@ -11,24 +11,15 @@ export default class Contact extends React.Component {
             phone: ''
         };
     }
-    isFormIncomplete = () => {
-        return !(
-            this.state.firstName &&
-            this.state.lastName &&
-            this.state.phone);
-    }
-    onSubmit = () => {
-        this.props.onCompletedForm(this.state);
-    }
-    onFirstNameChanged = (value) => {
-        this.setState({ firstName: value });
-    }
-    onLastNameChanged = (value) => {
-        this.setState({ lastName: value });
-    }
-    onPhoneChanged = (value) => {
-        this.setState({ phone: value });
-    }
+    isFormIncomplete = () => !(
+        this.state.firstName &&
+        this.state.lastName &&
+        this.state.phone);
+
+    onSubmit = () => this.props.onCompletedForm(this.state);
+    onFirstNameChanged = (value) => this.setState({ firstName: value });
+    onLastNameChanged = (value) => this.setState({ lastName: value });
+    onPhoneChanged = (value) => this.setState({ phone: value });
     render() {
         return (
             <section>

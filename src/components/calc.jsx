@@ -1,5 +1,5 @@
 import React from 'react';
-import Calculator from '../logic/calculator';
+import calculateInstallment from '../logic/calculator';
 import ContainerBox from './container_box';
 import ControlLabel from './control_label';
 import ButtonGroup from './button_group';
@@ -15,11 +15,8 @@ export default class Calc extends React.Component {
             purpose: '',
             installment: 0
         }
-        this.loanCalc = new Calculator();
     }
-    onPurposeChanged = (value) => {
-        this.setState({ purpose: value });
-    }
+    onPurposeChanged = (value) => this.setState({ purpose: value });
     onMonthsChanged = (value) => {
         const months = Number.parseInt(value);
         this.setState({ months: months });
@@ -37,22 +34,19 @@ export default class Calc extends React.Component {
     recalculateInstallment = (amount, months) => {
         let installment = 0;
         if (months > 0 && amount > 0) {
-            installment = this.loanCalc.calculateInstallment(
+            installment = calculateInstallment(
                 amount,
                 months);
         }
         this.setState({ installment: installment });
     }
-    isFormIncomplete = () => {
-        return !(
-            this.state.amount &&
-            this.state.months &&
-            this.state.purpose &&
-            this.state.installment);
-    }
-    onSubmit = () => {
-        this.props.onCompletedForm(this.state);
-    }
+    isFormIncomplete = () => !(
+        this.state.amount &&
+        this.state.months &&
+        this.state.purpose &&
+        this.state.installment);
+    onSubmit = () => this.props.onCompletedForm(this.state);
+
     render() {
         return (
             <section>
