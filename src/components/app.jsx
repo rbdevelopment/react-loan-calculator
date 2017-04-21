@@ -28,10 +28,9 @@ export default class App extends React.Component {
     if (this.isContactDone()) {
       return <h3>Thank you! We'll be in touch soon.</h3>
     }
-    else
-      if (this.isCalcDone()) {
-        return <Contact onCompletedForm={this.onCompletedContactForm} />;
-      }
+    if (this.isCalcDone()) {
+      return <Contact onCompletedForm={this.onCompletedContactForm} />;
+    }
     return <Calc onCompletedForm={this.onCompletedCalcForm} />;
   }
 }
