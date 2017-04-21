@@ -26,20 +26,12 @@ export default class App extends React.Component {
   render() {
     let current;
     if (this.isContactDone()) {
-      current = <h3>Thank you! We'll be in touch soon.</h3>
+      return <h3>Thank you! We'll be in touch soon.</h3>
     }
     else
       if (this.isCalcDone()) {
-        current = <Contact onCompletedForm={this.onCompletedContactForm} />;
+        return <Contact onCompletedForm={this.onCompletedContactForm} />;
       }
-      else {
-        current = <Calc onCompletedForm={this.onCompletedCalcForm} />;
-      }
-
-    return (
-      <section>
-        {current}
-      </section>
-    )
+      return <Calc onCompletedForm={this.onCompletedCalcForm} />;
   }
 }
