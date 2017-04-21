@@ -32,6 +32,6 @@ export default class App extends React.Component {
       if (this.isCalcDone()) {
         return <Contact onCompletedForm={this.onCompletedContactForm} />;
       }
-      return <Calc onCompletedForm={this.onCompletedCalcForm} />;
+    return <Calc onCompletedForm={this.onCompletedCalcForm} />;
   }
 }
