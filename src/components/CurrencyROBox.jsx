@@ -10,7 +10,8 @@ const CurrencyReadOnlyBox = ({ id, desc, amount }) => (
             <span className="input-group-addon">
                 <span className="glyphicon glyphicon-gbp" aria-hidden="true"></span>
             </span>
-            <input value={amount.toFixed(2)} type="text" className="form-control" id={id} readOnly={true} />
+            <input value={amount.toFixed(2)} type="text"
+                className="form-control" id={id} readOnly={true} />
         </div>
     </ContainerBox>
 );
