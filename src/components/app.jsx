@@ -15,7 +15,6 @@ export default class App extends React.Component {
   isCalcDone = () => this.state.calcData.installment > 0;
   isContactDone = () => this.state.contactData.phone;
   render() {
-    let current;
     if (this.isContactDone()) {
       return <h3>Thank you! We'll be in touch soon.</h3>
     }
