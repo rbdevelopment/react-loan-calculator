@@ -45,16 +45,17 @@ const validatePhone = (value) => {
         }
     return error;
 }
-const validateByType = (value, validatorType) => {
-    switch (validatorType) {
+const validateByType = (value, type) => {
+    switch (type) {
         case 'name':
             return validateName(value);
         case 'phone':
             return validatePhone(value);
         case 'amount':
             return validateAmount(value);
+        default:
+            throw new Error('Unknown validation type');
     }
-    return '';
 }
 
 export default validateByType;
