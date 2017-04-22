@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ControlLabel from './control_label';
-import ContainerBox from './container_box';
+import ControlLabel from './ControlLabel';
+import ContainerBox from './ContainerBox';
 
 class CurrencyReadOnlyBox extends React.Component {
     render() {

@@ -1,11 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
+
 import isAlpha from 'validator/lib/isAlpha';
 import isLength from 'validator/lib/isLength';
 import isNumeric from 'validator/lib/isNumeric';
-import PropTypes from 'prop-types';
-import classnames from 'classnames';
-import ControlLabel from './control_label';
-import ContainerBox from './container_box';
+
+import ControlLabel from './ControlLabel';
+import ContainerBox from './ContainerBox';
 
 class TextBox extends React.Component {
     constructor(props) {

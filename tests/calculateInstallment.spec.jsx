@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import calculateInstallment from '../src/logic/calculator';
+import calculateInstallment from '../src/logic/calculateInstallment';
 
-describe('Calculator', () => {
+describe('function calculateInstallment', () => {
     it('should return 0 with no arguments', () => {
         const result = calculateInstallment();
         expect(result).toBe(0);

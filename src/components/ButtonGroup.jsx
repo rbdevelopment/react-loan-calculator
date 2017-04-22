@@ -1,8 +1,8 @@
 import React from 'react';
-import classnames from 'classnames';
-import ControlLabel from './control_label';
-import ContainerBox from './container_box';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
+import ControlLabel from './ControlLabel';
+import ContainerBox from './ContainerBox';
 
 class ButtonGroup extends React.Component {
     constructor(props) {

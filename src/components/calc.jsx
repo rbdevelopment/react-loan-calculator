@@ -1,10 +1,10 @@
 import React from 'react';
-import calculateInstallment from '../logic/calculator';
-import ContainerBox from './container_box';
-import ControlLabel from './control_label';
-import ButtonGroup from './button_group';
-import CurrencyBox from './currency_box';
-import CurrencyReadOnlyBox from './currency_ro_box';
+import calculateInstallment from '../logic/calculateInstallment';
+import ContainerBox from './ContainerBox';
+import ControlLabel from './ControlLabel';
+import ButtonGroup from './ButtonGroup';
+import CurrencyBox from './CurrencyBox';
+import CurrencyReadOnlyBox from './CurrencyROBox';
 
 export default class Calc extends React.Component {
     constructor(props) {

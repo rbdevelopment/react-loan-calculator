@@ -1,6 +1,6 @@
 import React from 'react';
-import ContainerBox from './container_box';
-import TextBox from './text_box';
+import ContainerBox from './ContainerBox';
+import TextBox from './TextBox';
 
 export default class Contact extends React.Component {
     constructor(props) {

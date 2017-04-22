@@ -1,6 +1,6 @@
 import React from 'react';
-import Calc from './calc';
-import Contact from './contact';
+import Calc from './Calc';
+import Contact from './Contact';
 
 export default class App extends React.Component {
   constructor(props) {
