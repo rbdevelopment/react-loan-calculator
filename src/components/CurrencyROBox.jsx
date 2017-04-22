@@ -14,7 +14,7 @@ class CurrencyReadOnlyBox extends React.Component {
                     </span>
                     <input value={this.props.amount.toFixed(2)} type="text" className="form-control" id={this.props.id} readOnly={true} />
                 </div>
-            </ContainerBox >
+            </ContainerBox>
         );
     }
 }
