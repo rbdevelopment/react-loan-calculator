@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ControlLabel from './ControlLabel';
 import ContainerBox from './ContainerBox';
+import validateByType from '../logic/validate';
 
 class CurrencyBox extends React.Component {
     constructor(props) {
@@ -10,27 +11,11 @@ class CurrencyBox extends React.Component {
             amount: 0,
             error: ''
         };
-        this.minValue = props.minValue || 1000;
-        this.maxValue = props.maxValue || 40000;
     }
-    validate(value) {
-        let error = '';
-        if (isNaN(value)) {
-            error = "Please provide a valid amount";
-        }
-        else
-            if (value < this.minValue) {
-                error = "The loan amount cannot be smaller than \u00A3" + this.minValue;
-            }
-            else
-                if (value > this.maxValue) {
-                    error = "The loan amount cannot be greater than \u00A3" + this.maxValue;
-                }
-        return error;
-    }
+    
     onChange = (e) => {
         const value = Number.parseInt(e.target.value);
-        const error = this.validate(value);
+        const error = validateByType(value, "amount");
         this.setState({ error: error });
         this.props.onAmountChanged(value);
     }

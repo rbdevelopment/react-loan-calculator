@@ -1,11 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import isAlpha from 'validator/lib/isAlpha';
-import isLength from 'validator/lib/isLength';
-import isNumeric from 'validator/lib/isNumeric';
 import ControlLabel from './ControlLabel';
 import ContainerBox from './ContainerBox';
+import validateByType from '../logic/validate';
 
 class TextBox extends React.Component {
     constructor(props) {
@@ -21,39 +19,10 @@ class TextBox extends React.Component {
             error: ''
         };
     }
-    validate(value, validatorType) {
-        let error = '';
-        if (!value) {
-            error = 'This field is required to proceed';
-        }
-        else {
-            switch (validatorType) {
-                case 'name':
-                    if (!isAlpha(value, 'en-GB')) {
-                        error = "Please use letters only";
-                    }
-                    else if (!isLength(value, { min: 3 })) {
-                        error = "Name cannot be shorter than 3 characters";
-                    }
-                    else if (!isLength(value, { max: 30 })) {
-                        error = "Name is too long";
-                    }
-                    break;
-                case 'phone':
-                    if (!isNumeric(value)) {
-                        error = "Please use digits only";
-                    } else
-                        if (!isLength(value, { min: 7, max: 11 })) {
-                            error = "UK phone numbers are between 7 and 11 characters long";
-                        }
-                    break;
-            }
-        }
-        return error;
-    }
+    
     onChange = (e) => {
         let value = e.target.value;
-        var error = this.validate(value, this.props.type);
+        var error = validateByType(value, this.props.type);
         if (error) {
             this.props.onValueChanged('');
         }
