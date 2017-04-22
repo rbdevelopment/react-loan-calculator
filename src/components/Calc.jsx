@@ -3,8 +3,8 @@ import calculateInstallment from '../logic/calculateInstallment';
 import ContainerBox from './ContainerBox';
 import ControlLabel from './ControlLabel';
 import ButtonGroup from './ButtonGroup';
-import CurrencyBox from './CurrencyBox';
-import CurrencyReadOnlyBox from './CurrencyROBox';
+import AmountBox from './AmountBox';
+import AmountReadOnlyBox from './AmountROBox';
 
 export default class Calc extends React.Component {
     constructor(props) {
@@ -34,9 +34,7 @@ export default class Calc extends React.Component {
     recalculateInstallment = (amount, months) => {
         let installment = 0;
         if (months > 0 && amount > 0) {
-            installment = calculateInstallment(
-                amount,
-                months);
+            installment = calculateInstallment(amount, months);
         }
         this.setState({ installment: installment });
     }
@@ -54,7 +52,7 @@ export default class Calc extends React.Component {
                     desc="What would you like the loan for?"
                     items={['Car', 'Motorbike', 'Holiday', 'Home cinema']}
                     onItemChanged={this.onPurposeChanged} />
-                <CurrencyBox
+                <AmountBox
                     id="amount"
                     desc="How much would you like to borrow?"
                     onAmountChanged={this.onAmountChanged} />
@@ -62,13 +60,14 @@ export default class Calc extends React.Component {
                     desc="Over how many months?"
                     items={[12, 24, 36, 48, 60]}
                     onItemChanged={this.onMonthsChanged} />
-                <CurrencyReadOnlyBox
+                <AmountReadOnlyBox
                     id="installment"
                     desc="Your monthly installment with us would be"
                     amount={this.state.installment} />
                 <ContainerBox>
                     <button disabled={this.isFormIncomplete()}
-                        className='btn btn-success' onClick={this.onSubmit}>
+                        className='btn btn-success'
+                        onClick={this.onSubmit}>
                         I'm happy with the offer</button>
                 </ContainerBox>
             </section>

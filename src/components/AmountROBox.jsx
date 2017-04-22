@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ControlLabel from './ControlLabel';
 import ContainerBox from './ContainerBox';
 
-const CurrencyReadOnlyBox = ({ id, desc, amount }) => (
+const AmountReadOnlyBox = ({ id, desc, amount }) => (
     <ContainerBox>
         <ControlLabel target={id} desc={desc} />
         <div className="input-group">
@@ -16,10 +16,10 @@ const CurrencyReadOnlyBox = ({ id, desc, amount }) => (
     </ContainerBox>
 );
 
-CurrencyReadOnlyBox.propTypes = {
+AmountReadOnlyBox.propTypes = {
     amount: PropTypes.number.isRequired,
     desc: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired
 };
 
-export default CurrencyReadOnlyBox;
+export default AmountReadOnlyBox;

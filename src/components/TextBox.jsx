@@ -19,7 +19,7 @@ class TextBox extends React.Component {
             error: ''
         };
     }
-    
+
     onChange = (e) => {
         let value = e.target.value;
         var error = validateByType(value, this.props.type);

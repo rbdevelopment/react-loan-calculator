@@ -2,7 +2,12 @@
 import isAlpha from 'validator/lib/isAlpha';
 import isLength from 'validator/lib/isLength';
 import isNumeric from 'validator/lib/isNumeric';
-const validateAmount = (amount, minValue = 1000, maxValue = 40000) => {
+const validateAmount = (value, minValue = 1000, maxValue = 40000) => {
+    if (!isNumeric(value)) {
+        return "Please use digits only";
+    }
+
+    const amount = Number.parseInt(value);
     if (isNaN(amount)) {
         return "Please provide a valid amount";
     }

@@ -4,7 +4,7 @@ import ControlLabel from './ControlLabel';
 import ContainerBox from './ContainerBox';
 import validateByType from '../logic/validate';
 
-class CurrencyBox extends React.Component {
+class AmountBox extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -14,10 +14,9 @@ class CurrencyBox extends React.Component {
     }
     
     onChange = (e) => {
-        const value = Number.parseInt(e.target.value);
-        const error = validateByType(value, "amount");
+        const error = validateByType(e.target.value, "amount");
         this.setState({ error: error });
-        this.props.onAmountChanged(value);
+        this.props.onAmountChanged(Number.parseInt(e.target.value));
     }
     render() {
         return (
@@ -41,11 +40,11 @@ class CurrencyBox extends React.Component {
     }
 }
 
-CurrencyBox.propTypes = {
+AmountBox.propTypes = {
     desc: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
     minValue: PropTypes.number,
     maxValue: PropTypes.number
 };
 
-export default CurrencyBox;
+export default AmountBox;

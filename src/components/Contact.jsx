@@ -23,9 +23,21 @@ export default class Contact extends React.Component {
     render() {
         return (
             <section>
-                <TextBox onValueChanged={this.onFirstNameChanged} type="name" icon="user" id="firstName" desc="What is your first name?" />
-                <TextBox onValueChanged={this.onLastNameChanged} type="name" icon="user" id="lastName" desc="What is your last name?" />
-                <TextBox onValueChanged={this.onPhoneChanged} type="phone" icon="phone" id="phone" desc="What is your phone number?" />
+                <TextBox onValueChanged={this.onFirstNameChanged}
+                    type="name"
+                    icon="user"
+                    id="firstName"
+                    desc="What is your first name?" />
+                <TextBox onValueChanged={this.onLastNameChanged}
+                    type="name"
+                    icon="user"
+                    id="lastName"
+                    desc="What is your last name?" />
+                <TextBox onValueChanged={this.onPhoneChanged}
+                    type="phone"
+                    icon="phone"
+                    id="phone"
+                    desc="What is your phone number?" />
 
                 <ContainerBox>
                     <button disabled={this.isFormIncomplete()}
