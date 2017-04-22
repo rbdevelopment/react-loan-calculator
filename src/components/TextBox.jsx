@@ -1,11 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-
 import isAlpha from 'validator/lib/isAlpha';
 import isLength from 'validator/lib/isLength';
 import isNumeric from 'validator/lib/isNumeric';
-
 import ControlLabel from './ControlLabel';
 import ContainerBox from './ContainerBox';
 
@@ -23,13 +21,13 @@ class TextBox extends React.Component {
             error: ''
         };
     }
-    validate(value) {
+    validate(value, validatorType) {
         let error = '';
         if (!value) {
             error = 'This field is required to proceed';
         }
         else {
-            switch (this.props.type) {
+            switch (validatorType) {
                 case 'name':
                     if (!isAlpha(value, 'en-GB')) {
                         error = "Please use letters only";
@@ -55,7 +53,7 @@ class TextBox extends React.Component {
     }
     onChange = (e) => {
         let value = e.target.value;
-        var error = this.validate(value);
+        var error = this.validate(value, this.props.type);
         if (error) {
             this.props.onValueChanged('');
         }
