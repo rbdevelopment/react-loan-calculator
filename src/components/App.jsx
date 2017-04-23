@@ -1,26 +1,21 @@
 import React from 'react';
-import Calc from './Calc';
-import Contact from './Contact';
+import PropTypes from 'prop-types';
+import Calc from '../containers/Calc';
+import Contact from '../containers/Contact';
 
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      calcData: {},
-      contactData: {}
-    };
+const App = ({ accepted, confirmed }) => {
+  if (accepted && confirmed) {
+    return <h3>Thank you! We'll be in touch soon.</h3>
   }
-  onCompletedCalcForm = (data) => this.setState({ calcData: data });
-  onCompletedContactForm = (data) => this.setState({ contactData: data });
-  isCalcDone = () => this.state.calcData.installment > 0;
-  isContactDone = () => this.state.contactData.phone;
-  render() {
-    if (this.isContactDone()) {
-      return <h3>Thank you! We'll be in touch soon.</h3>
-    }
-    if (this.isCalcDone()) {
-      return <Contact onCompletedForm={this.onCompletedContactForm} />;
-    }
-    return <Calc onCompletedForm={this.onCompletedCalcForm} />;
+  if (accepted) {
+    return <Contact />;
   }
+  return <Calc />;
 }
+
+App.propTypes = {
+  accepted: PropTypes.bool.isRequired,
+  confirmed: PropTypes.bool.isRequired
+};
+
+export default App;

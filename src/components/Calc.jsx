@@ -1,76 +1,45 @@
 import React from 'react';
-import calculateInstallment from '../logic/calculateInstallment';
+import PropTypes from 'prop-types';
 import ContainerBox from './ContainerBox';
 import ControlLabel from './ControlLabel';
 import ButtonGroup from './ButtonGroup';
 import AmountBox from './AmountBox';
-import AmountReadOnlyBox from './AmountROBox';
+import AmountReadOnly from '../containers/AmountReadOnly';
 
-export default class Calc extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            amount: 0,
-            months: 0,
-            purpose: '',
-            installment: 0
-        }
-    }
-    onPurposeChanged = (value) => this.setState({ purpose: value });
-    onMonthsChanged = (value) => {
-        const months = Number.parseInt(value);
-        this.setState({ months: months });
+const Calc = ({ incomplete, onPurposeChanged, onAmountChanged, onMonthsChanged, onSubmit }) => {
+    return (
+        <section>
+            <ButtonGroup
+                desc="What would you like the loan for?"
+                items={['Car', 'Motorbike', 'Holiday', 'Home cinema']}
+                onItemChanged={onPurposeChanged} />
+            <AmountBox
+                id="amount"
+                desc="How much would you like to borrow?"
+                onAmountChanged={onAmountChanged} />
+            <ButtonGroup
+                desc="Over how many months?"
+                items={[12, 24, 36, 48, 60]}
+                onItemChanged={onMonthsChanged} />
+            <AmountReadOnly
+                id="installment"
+                desc="Your monthly installment with us would be" />
+            <ContainerBox>
+                <button disabled={incomplete}
+                    className='btn btn-success'
+                    onClick={onSubmit}>
+                    I'm happy with the offer</button>
+            </ContainerBox>
+        </section>
+    );
+};
 
-        const amount = this.state.amount;
-        this.recalculateInstallment(amount, months);
-    }
-    onAmountChanged = (value) => {
-        const amount = Number.parseInt(value);
-        this.setState({ amount: amount });
+Calc.propTypes = {
+    incomplete: PropTypes.bool.isRequired,
+    onPurposeChanged: PropTypes.func.isRequired,
+    onAmountChanged: PropTypes.func.isRequired,
+    onMonthsChanged: PropTypes.func.isRequired,
+    onSubmit: PropTypes.func.isRequired
+};
 
-        const months = this.state.months;
-        this.recalculateInstallment(amount, months);
-    }
-    recalculateInstallment = (amount, months) => {
-        let installment = 0;
-        if (months > 0 && amount > 0) {
-            installment = calculateInstallment(amount, months);
-        }
-        this.setState({ installment: installment });
-    }
-    isFormIncomplete = () => !(
-        this.state.amount &&
-        this.state.months &&
-        this.state.purpose &&
-        this.state.installment);
-    onSubmit = () => this.props.onCompletedForm(this.state);
-
-    render() {
-        return (
-            <section>
-                <ButtonGroup
-                    desc="What would you like the loan for?"
-                    items={['Car', 'Motorbike', 'Holiday', 'Home cinema']}
-                    onItemChanged={this.onPurposeChanged} />
-                <AmountBox
-                    id="amount"
-                    desc="How much would you like to borrow?"
-                    onAmountChanged={this.onAmountChanged} />
-                <ButtonGroup
-                    desc="Over how many months?"
-                    items={[12, 24, 36, 48, 60]}
-                    onItemChanged={this.onMonthsChanged} />
-                <AmountReadOnlyBox
-                    id="installment"
-                    desc="Your monthly installment with us would be"
-                    amount={this.state.installment} />
-                <ContainerBox>
-                    <button disabled={this.isFormIncomplete()}
-                        className='btn btn-success'
-                        onClick={this.onSubmit}>
-                        I'm happy with the offer</button>
-                </ContainerBox>
-            </section>
-        );
-    }
-}
+export default Calc;
